@@ -4,7 +4,7 @@ let cardbox=document.querySelector('.row');
 let btnSpinner=document.querySelector("#btn-spinner");
 let productSpinner=document.querySelector("#product-spinner");
 async function makeup() {
-    let fetching = await fetch('http://makeup-api.herokuapp.com/api/v1/products.json');
+    let fetching = await fetch('https://makeup-api.herokuapp.com/api/v1/products.json');
     let res = fetching.json();
     let data = await res;
     let typeArr = [];
@@ -34,7 +34,7 @@ function showBtn(btnArr) {
 function findThis(btnText) {
     productSpinner.style.display='inline-block';
     cardbox.innerHTML=''
-    fetch('http://makeup-api.herokuapp.com/api/v1/products.json')
+    fetch('https://makeup-api.herokuapp.com/api/v1/products.json')
         .then(res => res.json())
         .then(data => {
            productSpinner.style.display='none';
